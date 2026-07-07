@@ -20,7 +20,7 @@
 
 body {
     margin: 0;
-    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     color: var(--text);
     background:
         radial-gradient(circle at top left, rgba(198, 107, 61, 0.18), transparent 30%),
