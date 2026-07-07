@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +10,21 @@
     <div class="page-shell">
         <aside class="hero-panel">
             <p class="eyebrow">QSAR Web Predictor</p>
-            <h1>自由基降解速率常数预测与共形区间输出</h1>
+            <h1>Free Radical Degradation Rate Constant Prediction with Conformal Intervals</h1>
             <p class="hero-copy">
-                页面会同时给出最优模型的点预测值，以及对应的自适应共形预测区间，方便直接查看预测中心值与不确定性范围。
+                This page provides both the point prediction from the optimal model and the corresponding adaptive conformal prediction intervals, allowing direct assessment of the predicted central value and its uncertainty range.
             </p>
             <div class="hero-pills">
                 <span>Best-model prediction</span>
                 <span>90% conformal interval</span>
                 <span>95% conformal interval</span>
             </div>
-            <a href="{{ url_for('welcome') }}" class="text-link">返回首页</a>
+            <a href="{{ url_for('welcome') }}" class="text-link">Back to Home</a>
         </aside>
 
         <main class="form-panel">
             <div class="panel-header">
-                <h2>输入分子描述符</h2>
+                <h2>Input Molecular Descriptors</h2>
                 <!-- <p>填写与你训练模型一致的描述符，氧化剂会自动转换为 `Oxidant_E0` 特征。</p> -->
             </div>
 
@@ -36,7 +36,7 @@
                 <div class="input-grid intro-grid">
                     <div class="field">
                         <label for="smiles">SMILES</label>
-                        <input id="smiles" type="text" name="smiles" value="{{ form_values.get('smiles', '') }}" placeholder="可选，仅用于记录当前输入">
+                        <input id="smiles" type="text" name="smiles" value="{{ form_values.get('smiles', '') }}" placeholder="Optional, for record only">
                     </div>
                     <div class="field">
                         <label for="oxidant">Oxidant</label>
@@ -52,7 +52,7 @@
                 <section class="descriptor-section">
                     <div class="section-heading">
                         <h3>{{ group_name }}</h3>
-                        <p>{{ fields|length }} 个输入特征</p>
+                        <p>{{ fields|length }} input features</p>
                     </div>
                     <div class="input-grid">
                         {% for feat in fields %}
@@ -72,7 +72,7 @@
                 </section>
                 {% endfor %}
 
-                <button type="submit" class="primary-btn">运行预测</button>
+                <button type="submit" class="primary-btn">Run Prediction</button>
             </form>
         </main>
     </div>
@@ -83,7 +83,7 @@
             <div class="result-header">
                 <div>
                     <p class="eyebrow">Prediction Result</p>
-                    <h3>{{ prediction.model_name }} 预测结果</h3>
+                    <h3>{{ prediction.model_name }} Prediction</h3>
                 </div>
                 <div class="sigma-badge">sigma = {{ "%.4f"|format(prediction.sigma) }}</div>
             </div>
